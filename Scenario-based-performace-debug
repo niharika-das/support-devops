@@ -42,3 +42,23 @@ I would also examine database queries and application code for any inefficiencie
 If necessary, I would scale up server resources or optimize server configurations to handle increased traffic during peak hours.
 Additionally, I would consider implementing caching mechanisms, load balancing, or other performance optimization techniques to improve the responsiveness of the web application.
 Finally, I would continue to monitor performance metrics and make further adjustments as needed to ensure optimal performance during peak usage hours.
+
+Scenario: Database Performance Degradation
+Question: Your company's database performance has suddenly degraded. How would you go about debugging this issue?
+Answer: First, I would identify if the performance issue is due to a sudden increase in workload or if it's a systemic problem. Then, I would check the database logs for any errors or warnings. If there are no apparent issues, I would analyze the queries being executed using tools like EXPLAIN in SQL or database profiling tools. Additionally, I would monitor system resources such as CPU, memory, and disk I/O to see if there's any contention. Based on these analyses, I would optimize queries, tune database configurations, or scale resources accordingly.
+
+Scenario: Linux Server Becomes Unresponsive
+Question: You receive an alert that one of your Linux servers has become unresponsive. How would you troubleshoot this issue?
+Answer: First, I would try to SSH into the server to check its responsiveness. If SSH is not available, I would attempt to connect through console access. Once connected, I would check system logs (/var/log/messages, /var/log/syslog) for any error messages indicating the cause of the unresponsiveness. Additionally, I would use tools like top, htop, or ps to identify any processes consuming excessive CPU or memory. If necessary, I would forcefully kill these processes to restore server responsiveness. I would also check disk space and network connectivity as they could be contributing factors.
+
+Scenario: Network Packet Loss
+Question: Users are reporting intermittent connectivity issues with your company's web application. How would you diagnose and fix this problem?
+Answer: First, I would use network monitoring tools like Wireshark or tcpdump to capture network traffic and analyze for any signs of packet loss or anomalies. If packet loss is observed, I would check network devices such as switches, routers, and firewalls for errors or misconfigurations. Additionally, I would check for bandwidth saturation or network congestion. If the issue persists, I would perform traceroutes to identify where packets are being dropped and investigate further with the network team or ISP if necessary. Implementing Quality of Service (QoS) policies or optimizing network configurations may help mitigate packet loss issues.
+
+Scenario: System Crash During Software Upgrade
+Question: While performing a software upgrade on a critical system, the system crashes midway. How would you recover from this situation?
+Answer: First, I would try to reboot the system and assess if it comes back online. If not, I would boot into recovery mode or use a live CD/USB to access the filesystem and examine log files to identify the cause of the crash. Depending on the severity of the issue, I might need to rollback the software upgrade by reinstalling the previous version or restoring from a backup. If data corruption is suspected, I would attempt to repair the filesystem using fsck or similar tools. Once the system is stable, I would conduct a post-mortem analysis to prevent similar incidents in the future.
+
+Scenario: High CPU Utilization on a Production Server
+Question: You notice unusually high CPU utilization on one of your production servers. How would you troubleshoot and resolve this issue without impacting service availability?
+Answer: First, I would identify the processes consuming the most CPU using tools like top or htop. Then, I would analyze the nature of these processes - whether they are legitimate applications or potential malware. If they are legitimate, I would investigate if they are performing resource-intensive tasks and optimize them if possible. If the high CPU utilization is caused by malware or unauthorized activity, I would isolate the affected system from the network and perform a thorough malware scan using tools like ClamAV. Additionally, I would check for any cron jobs or scheduled tasks that might be contributing to the high CPU load and disable or reschedule them if necessary. Finally, I would monitor the system closely to ensure that CPU utilization returns to normal levels.
