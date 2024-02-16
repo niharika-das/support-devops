@@ -1,0 +1,33 @@
+Slow Database Performance:
+Identify problematic queries through database logs or profiling tools.
+Analyze query execution plans for inefficiencies like missing indexes or suboptimal joins.
+Optimize queries by adding indexes, rewriting queries, or restructuring the schema.
+Monitor performance post-optimization.
+
+High CPU Usage on Linux Server:
+Use top or htop to find CPU-intensive processes.
+Investigate with tools like strace, lsof, or perf.
+Check system logs for errors.
+Adjust configurations if needed.
+
+Intermittent Network Connectivity Issues:
+Check physical network infrastructure and configurations.
+Use ping, traceroute, and netstat to diagnose.
+Review firewall and routing configurations.
+Analyze network traffic with tcpdump or Wireshark.
+Implement solutions based on findings.
+
+Service Failure After Update:
+Check system logs for error messages.
+Review service configuration files.
+Verify dependencies and compatibility.
+Research known issues and consult documentation.
+Consider rolling back updates or implementing temporary fixes.
+
+Intermittent Web Application Performance Degradation:
+Monitor server resources during peak hours.
+Analyze web server and application logs for patterns or errors.
+Review database queries and application code for inefficiencies.
+Scale up resources or optimize configurations.
+Implement caching, load balancing, or other optimization techniques.
+Continuously monitor and adjust for optimal performance.
