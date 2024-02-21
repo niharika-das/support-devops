@@ -1,0 +1,282 @@
+
+1. **Describe your approach to troubleshooting a Linux server that is experiencing high CPU usage.**
+   
+   *Answer*: 
+   - Initially, I'd identify the processes consuming the most CPU using tools like `top` or `htop`.
+   - Next, I'd use tools like `strace` or `lsof` to delve deeper into the problematic processes to understand their behavior.
+   - Additionally, I'd check system logs for any errors or warning messages that might provide clues.
+   - Depending on the findings, I might adjust kernel parameters, optimize software configurations, or refactor code to reduce CPU load.
+
+2. **How would you diagnose network connectivity issues on a Linux server?**
+
+   *Answer*:
+   - I would start by checking the network interface status using `ifconfig` or `ip` commands.
+   - Then, I'd use tools like `ping`, `traceroute`, or `netstat` to check connectivity to other hosts and identify any network anomalies.
+   - I'd also examine the routing table (`route`) and DNS configuration (`/etc/resolv.conf`) to ensure proper network configuration.
+   - Additionally, I might use packet capture tools like `tcpdump` or Wireshark to analyze network traffic and pinpoint the source of connectivity issues.
+
+3. **You encounter a Linux server with disk space running critically low. How would you troubleshoot and address this issue?**
+
+   *Answer*:
+   - Firstly, I'd identify which directories or files are consuming the most disk space using commands like `du` or `df`.
+   - Next, I'd investigate log files, temporary files, and large application data directories that might be candidates for cleanup.
+   - I'd also consider compressing or archiving old log files or data that's no longer needed.
+   - If the issue persists, I might look into resizing partitions or adding additional disk space to accommodate the server's needs.
+
+4. **How would you troubleshoot a Linux server that is experiencing intermittent performance degradation during peak hours?**
+
+   *Answer*:
+   - I'd begin by monitoring system resources using tools like `top`, `vmstat`, or `sar` during peak hours to identify any resource bottlenecks.
+   - Then, I'd analyze system and application logs to look for any patterns or errors that correlate with performance degradation.
+   - Additionally, I'd review database queries, application code, and network traffic to identify any inefficiencies or bottlenecks.
+   - Based on the findings, I'd consider scaling up resources, optimizing configurations, implementing caching mechanisms, or load balancing to improve performance.
+
+5. **Describe your process for troubleshooting system crashes or kernel panics on a Linux server.**
+
+   *Answer*:
+   - Initially, I'd review system logs such as `/var/log/messages`, `/var/log/syslog`, or `dmesg` to gather information about the crash.
+   - I'd analyze any core dumps or crash dumps generated to identify the state of the system at the time of the crash.
+   - Next, I'd check hardware health using tools like `smartctl` for disk health or `memtest` for memory issues.
+   - If the issue persists, I might perform a systematic review of recent changes, such as software updates or configuration changes, that might have triggered the crash.
+   - Finally, I'd engage with relevant teams or communities for further assistance or escalate the issue if necessary.
+
+
+6. **How would you troubleshoot and mitigate a Linux server experiencing memory leaks?**
+
+   *Answer*:
+   - Initially, I'd use tools like `free`, `top`, or `vmstat` to monitor memory usage and identify any abnormal trends.
+   - Next, I'd investigate memory-hungry processes using tools like `ps` or `htop` to determine which processes are consuming the most memory.
+   - I'd analyze memory utilization patterns and memory allocation behavior of these processes to identify potential memory leaks.
+   - Once identified, I'd work on fixing memory leaks by modifying application code, updating libraries, or optimizing memory management configurations.
+   - Additionally, I might implement proactive measures such as resource limits or periodic restarts to mitigate the impact of memory leaks while permanent fixes are implemented.
+
+7. **You're tasked with diagnosing intermittent system freezes on a Linux server. How would you approach this?**
+
+   *Answer*:
+   - Firstly, I'd review system logs, kernel messages (`dmesg`), and any relevant application logs to identify patterns or error messages leading up to the freezes.
+   - I'd check hardware components such as CPU, memory, and disks for any signs of failure using diagnostic tools like `memtest`, `smartctl`, or vendor-specific utilities.
+   - I'd monitor system performance metrics during periods of normal operation and during freezes using tools like `sar` or custom monitoring solutions to identify resource bottlenecks.
+   - Additionally, I'd analyze system configurations, kernel parameters, and installed software for any misconfigurations or compatibility issues that could contribute to the problem.
+
+8. **How would you troubleshoot slow disk I/O performance on a Linux server?**
+
+   *Answer*:
+   - I'd start by identifying the disks and partitions experiencing slow I/O using tools like `iostat` or `iotop`.
+   - Next, I'd investigate processes or applications that are heavy users of disk I/O using tools like `lsof` or `iotop`.
+   - I'd check for any disk errors or issues using tools like `smartctl` or by reviewing kernel messages (`dmesg`).
+   - Additionally, I'd analyze file system performance and disk usage patterns to identify any fragmentation, file system corruption, or suboptimal configurations that could impact disk I/O performance.
+   - Based on my findings, I'd implement solutions such as optimizing disk I/O scheduling, adding additional disks or upgrading storage hardware, or tuning file system parameters to improve performance.
+
+9. **You're troubleshooting a Linux server that is experiencing frequent SSH connection timeouts. How would you diagnose and address this issue?**
+
+   *Answer*:
+   - Firstly, I'd check the SSH server configuration (`/etc/ssh/sshd_config`) for any misconfigurations or restrictive settings that could cause timeouts.
+   - I'd examine network connectivity using tools like `ping` or `traceroute` to ensure there are no network issues causing intermittent connectivity problems.
+   - I'd review system logs (`/var/log/auth.log` or `/var/log/secure`) for any SSH-related error messages or warnings that could provide clues about the cause of the timeouts.
+   - Additionally, I'd consider factors such as firewall rules, network congestion, or excessive load on the server that could affect SSH connectivity.
+   - Depending on the findings, I'd adjust SSH server settings, optimize network configurations, or implement SSH connection keep-alive mechanisms to prevent timeouts.
+
+10. **Describe a scenario where you had to troubleshoot a complex issue on a Linux server and how you approached resolving it.**
+
+   *Answer*:
+   - Provide a detailed account of a specific troubleshooting scenario you encountered, including the symptoms, the steps you took to diagnose the problem, and the solution you implemented.
+   - Highlight the technical challenges you faced during the troubleshooting process and how you overcame them using your expertise in Linux systems, networking, and debugging tools.
+   - Emphasize your problem-solving skills, critical thinking abilities, and ability to work under pressure to resolve the issue efficiently and effectively.
+   - Discuss any lessons learned from the experience and how you applied them to improve your troubleshooting skills and prevent similar issues in the future.
+
+11. **How would you check the status of a service and restart it if it's not running?**
+
+    *Answer*:
+    - I would use the `systemctl status <service>` command to check the status of the service.
+    - If the service is not running, I would use `systemctl start <service>` to start it.
+    - To restart a service, I would use `systemctl restart <service>`.
+
+12. **What command would you use to find files modified within the last 24 hours in a specific directory?**
+
+    *Answer*:
+    - I would use the `find` command with the `-mtime` option. For example:
+      ```
+      find /path/to/directory -mtime -1
+      ```
+
+13. **How can you check the disk usage of a Linux system and identify which directories are using the most space?**
+
+    *Answer*:
+    - I would use the `df` command to check overall disk usage.
+    - To identify which directories are using the most space, I would use the `du` command with the `--max-depth` option. For example:
+      ```
+      du --max-depth=1 /path/to/directory | sort -n -r
+      ```
+
+14. **Explain the purpose of the `/etc/resolv.conf` file in a Linux system.**
+
+    *Answer*:
+    - The `/etc/resolv.conf` file contains configuration information for domain name resolution.
+    - It specifies the DNS (Domain Name System) servers that the system should query to resolve domain names to IP addresses.
+
+15. **What command would you use to add a new user to a Linux system?**
+
+    *Answer*:
+    - I would use the `adduser` or `useradd` command, depending on the distribution. For example:
+      ```
+      adduser newusername
+      ```
+
+16. **How would you change the permissions of a file in Linux?**
+
+    *Answer*:
+    - I would use the `chmod` command followed by the desired permissions and the file name. For example:
+      ```
+      chmod 644 filename.txt
+      ```
+
+17. **Explain the purpose of the `/etc/passwd` and `/etc/shadow` files in Linux.**
+
+    *Answer*:
+    - The `/etc/passwd` file contains user account information, such as usernames, user IDs, home directories, and login shells.
+    - The `/etc/shadow` file contains encrypted password hashes for user accounts, as well as password expiration and aging information.
+
+18. **What is SSH and how would you troubleshoot SSH connection issues?**
+
+    *Answer*:
+    - SSH (Secure Shell) is a cryptographic network protocol used for secure remote access to systems.
+    - To troubleshoot SSH connection issues, I would check the SSH server logs (`/var/log/auth.log` or `/var/log/secure`), verify firewall rules, and ensure SSH service is running. I would also check network connectivity using tools like `ping` and `traceroute`.
+
+19. **How can you check the version of a installed package in Linux?**
+
+    *Answer*:
+    - I would use the package management tool (`apt`, `yum`, `dnf`, etc.) with the appropriate option. For example:
+      - `apt show package_name`
+      - `yum info package_name`
+
+20. **Explain the purpose of the `/var/log` directory in a Linux system.**
+
+    *Answer*:
+    - The `/var/log` directory contains log files generated by various system services and applications.
+    - It's used for troubleshooting, monitoring, and auditing system activity.
+
+
+21. **How would you determine the amount of free memory available on a Linux system?**
+
+    *Answer*:
+    - I would use the `free` command, which displays the amount of free and used memory in the system.
+
+22. **Explain the purpose of the `/etc/apt/sources.list` file in Debian-based Linux distributions.**
+
+    *Answer*:
+    - The `/etc/apt/sources.list` file contains a list of package repositories from which the package manager (`apt`) retrieves and installs software packages.
+
+23. **What command would you use to search for a specific string in a text file?**
+
+    *Answer*:
+    - I would use the `grep` command followed by the string to search and the file name. For example:
+      ```
+      grep "search_string" filename.txt
+      ```
+
+24. **How can you check the current runlevel of a Linux system?**
+
+    *Answer*:
+    - I would use the `runlevel` command or `systemctl` command to check the current runlevel or target of the system.
+
+25. **Explain the purpose of the `/etc/hosts` file in a Linux system.**
+
+    *Answer*:
+    - The `/etc/hosts` file is used to map hostnames to IP addresses locally on the system, bypassing the DNS resolution process.
+
+26. **What command would you use to list all running processes on a Linux system?**
+
+    *Answer*:
+    - I would use the `ps` command with the `aux` options. For example:
+      ```
+      ps aux
+      ```
+
+27. **How would you determine the amount of disk space used by a specific directory and its contents?**
+
+    *Answer*:
+    - I would use the `du` (disk usage) command followed by the directory name. For example:
+      ```
+      du -sh /path/to/directory
+      ```
+
+28. **Explain the purpose of the `tar` command in Linux.**
+
+    *Answer*:
+    - The `tar` command is used to create, view, and extract files from archives. It's commonly used for packaging files and directories into a single file for distribution or backup purposes.
+
+29. **What command would you use to display the last 10 lines of a text file?**
+
+    *Answer*:
+    - I would use the `tail` command with the `-n` option to specify the number of lines to display. For example:
+      ```
+      tail -n 10 filename.txt
+      ```
+
+30. **How can you check the status of a network interface in Linux?**
+
+    *Answer*:
+    - I would use the `ip` command or `ifconfig` command to display the status and configuration of network interfaces. For example:
+      ```
+      ip addr show interface_name
+      ```
+
+31. **Explain the purpose of the `/etc/fstab` file in Linux.**
+
+    *Answer*:
+    - The `/etc/fstab` file is used to configure file systems and storage devices that are automatically mounted at boot time.
+
+32. **What command would you use to view the contents of a text file in a paginated manner?**
+
+    *Answer*:
+    - I would use the `less` command. For example:
+      ```
+      less filename.txt
+      ```
+
+33. **How would you find out the IP address of a Linux system?**
+
+    *Answer*:
+    - I would use the `ip addr show` command or `ifconfig` command to display network interface information, including IP addresses.
+
+34. **Explain the purpose of the `/etc/passwd` file in a Linux system.**
+
+    *Answer*:
+    - The `/etc/passwd` file contains user account information, including usernames, user IDs, home directories, and login shells.
+
+35. **What command would you use to list all installed packages on a Debian-based Linux system?**
+
+    *Answer*:
+    - I would use the `dpkg` command with the `-l` option. For example:
+      ```
+      dpkg -l
+      ```
+
+36. **How can you check the listening network ports on a Linux system?**
+
+    *Answer*:
+    - I would use the `netstat` command or `ss` command with appropriate options to display listening network ports. For example:
+      ```
+      netstat -tuln
+      ```
+
+37. **Explain the purpose of the `/proc` filesystem in Linux.**
+
+    *Answer*:
+    - The `/proc` filesystem is a virtual filesystem that provides information about running processes, system hardware, and kernel parameters.
+
+38. **What command would you use to create a new directory in Linux?**
+
+    *Answer*:
+    - I would use the `mkdir` command followed by the directory name. For example:
+      ```
+      mkdir new_directory
+      ```
+
+39. **How would you check the version of the Linux kernel running on a system?**
+
+    *Answer*:
+    - I would use the `uname` command with the `-r` option. For example:
+      ```
+      uname -r
+      ```
